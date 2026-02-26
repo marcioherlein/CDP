@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const skills = {
   'Marketing & Strategy': [
     'Consumer behavior analysis',
@@ -42,6 +44,12 @@ export default function About() {
 
         {/* Content grid */}
         <div className="grid md:grid-cols-2 gap-16 mb-24">
+          {/* Photo column - visible on mobile too */}
+          <div className="relative md:hidden h-80 overflow-hidden rounded-lg mb-8">
+            <Image src="/images/about_portrait.jpg" alt="Courtney du Preez" fill className="object-cover object-top" sizes="100vw" />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
+          </div>
+
           <div className="space-y-6">
             <p className="text-silver text-lg leading-relaxed font-light">
               I'm a digitally creative marketer and content director whose visual
@@ -75,26 +83,26 @@ export default function About() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-px bg-ash/40">
-            {[
-              { num: '3+', label: 'Brand campaigns directed' },
-              { num: 'BA', label: 'BSocSci — Psychology & Marketing' },
-              { num: '2', label: 'Languages' },
-              { num: '∞', label: 'Sport & Fashion passion' },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-charcoal p-8 flex flex-col justify-between min-h-32"
-              >
-                <span className="font-display text-5xl text-accent">
-                  {stat.num}
-                </span>
-                <span className="text-muted text-xs tracking-wider uppercase leading-relaxed">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          {/* Photo + Stats — desktop */}
+          <div className="hidden md:flex flex-col gap-4">
+            <div className="relative flex-1 min-h-[320px] overflow-hidden rounded-lg">
+              <Image src="/images/about_portrait.jpg" alt="Courtney du Preez" fill className="object-cover object-top" sizes="50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent" />
+            </div>
+            {/* Stats below photo */}
+            <div className="grid grid-cols-4 gap-px bg-ash/40">
+              {[
+                { num: '3+', label: 'Brands directed' },
+                { num: 'BA', label: 'Psych & Marketing' },
+                { num: '2', label: 'Languages' },
+                { num: '∞', label: 'Sport & Fashion' },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-charcoal p-4 flex flex-col justify-between min-h-20">
+                  <span className="font-display text-3xl text-accent">{stat.num}</span>
+                  <span className="text-muted text-[10px] tracking-wider uppercase leading-relaxed">{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
