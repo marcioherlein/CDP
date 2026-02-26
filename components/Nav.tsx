@@ -18,6 +18,7 @@ export default function Nav() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/#work', label: 'Work' },
+    { href: '/#matchpoint', label: 'Case Study' },
     { href: '/#about', label: 'About' },
     { href: '/#contact', label: 'Contact' },
   ]
