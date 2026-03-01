@@ -45,18 +45,18 @@ export default function Contact() {
 
             <div className="space-y-4 pt-4">
               <a
-                href="mailto:courtneyleedupreez@gmail.com"
+                href="mailto:email@gmail.com"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-accent text-xs tracking-widest uppercase w-20">
                   Email
                 </span>
                 <span className="text-silver group-hover:text-white transition-colors text-sm">
-                  courtneyleedupreez@gmail.com
+                 email@gmail.com
                 </span>
               </a>
               <a
-                href="tel:+5491151319202"
+                href="tel:+549XX51XX9X0X"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-accent text-xs tracking-widest uppercase w-20">
